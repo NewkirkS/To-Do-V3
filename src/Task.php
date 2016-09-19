@@ -11,6 +11,11 @@ class Task
      $this->id = $id;
     }
 
+    function getID()
+    {
+        return $this->id;
+    }
+
     function setDescription($new_description)
     {
      $this->description = (string) $new_description;
@@ -31,6 +36,7 @@ class Task
     {
         $returned_tasks = $GLOBALS['DB']->query("SELECT * FROM tasks;");
         $tasks = array();
+
         foreach($returned_tasks as $task) {
             $description = $task['description'];
             $id = $task['id'];
@@ -40,14 +46,22 @@ class Task
         return $tasks;
     }
 
+    static function find($search_id)
+    {
+        $found_task = null;
+        $tasks = Task::getAll();
+        foreach($tasks as $task) {
+            $task_id = $task->getId();
+            if ($task_id == $search_id) {
+                $found_task = $task;
+            }
+        }
+        return $found_task;
+    }
+    
     static function deleteAll()
     {
          $GLOBALS['DB']->exec("DELETE FROM tasks;");
-    }
-
-    function getID()
-    {
-        return $this->id;
     }
 }
 ?>
