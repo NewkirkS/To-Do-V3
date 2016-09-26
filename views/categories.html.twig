@@ -9,7 +9,7 @@
         <p>Here are all your categories:</p>
         <ul>
             {% for category in categories %}
-                <li>{{ category.getName }}</li>
+                <li><a href="/categories/{{ category.getId }}">{{ category.getName }}</a></li>
             {% endfor %}
         </ul>
     {% endif %}
@@ -21,7 +21,9 @@
         <button type='submit'>Add Category</button>
     </form>
     <form action='/delete_categories' method='post'>
-        <button type='submit'>Clear</button>
+        <button type='submit'>Delete ALL categories</button>
     </form>
+
+    <p><a href='/'>Home</a></p>
 </body>
 </html>
