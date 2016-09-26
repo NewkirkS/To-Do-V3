@@ -2,7 +2,7 @@
 
 #### _A to do list using MySQL, September 19, 2016_
 
-#### By _**Katy Henning & Aimen Khakwani**_
+#### By _**Stephen Newkirk, Katy Henning & Aimen Khakwani**_
 
 ## Description
 
@@ -47,4 +47,4 @@ For questions or comments, please contact us through GitHub.
 ### License
 
 *This website is licensed under the MIT license.*  
-Copyright (c) 2016 **_Katy Henning & Aimen Khakwani_**
+Copyright (c) 2016 **_Stephen Newkirk, Katy Henning & Aimen Khakwani_**
