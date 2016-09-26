@@ -47,7 +47,8 @@ class Task
         foreach($returned_tasks as $task) {
             $description = $task['description'];
             $id = $task['id'];
-            $new_task = new Task($description, $id);
+            $completed = $task['completed'];
+            $new_task = new Task($description, $id, $completed);
             array_push($tasks, $new_task);
         }
         return $tasks;

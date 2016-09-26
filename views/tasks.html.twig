@@ -6,10 +6,24 @@
     <h1>To Do List</h1>
 
     {% if tasks is not empty %}
-        <p>Here are all your tasks:</p>
+        <p>Here are your tasks:</p>
         <ul>
             {% for task in tasks %}
-                <li><a href="/tasks/{{ task.getId }}">{{ task.getDescription }}</a></li>
+                {% if task.getCompleted == 0 %}
+                    <li><a href="/tasks/{{ task.getId }}">{{ task.getDescription }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if tasks is not empty %}
+        <p>Here are your completed tasks:</p>
+        <ul>
+            {% for task in tasks %}
+                {% if task.getCompleted == 1 %}
+                        <li><a href="/tasks/{{ task.getId }}">{{ task.getDescription }}</a></li>
+
+                {% endif %}
             {% endfor %}
         </ul>
     {% endif %}

@@ -26,6 +26,10 @@
         </select>
         <button type='submit'>Add Category</button>
     </form>
+    <form action="/completed_task/{{ task.getId }}" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <button type="submit">Completed Task</button>
+    </form>
     <p><a href='/'>Home</a></p>
 </body>
 </html>
